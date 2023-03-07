@@ -58,20 +58,3 @@ Console.WriteLine($"Расстояние между заданными точк�
 
 
 //*****************************************************************************************************************************
-
-
- //Task_23
- //Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N
-
-/*Console.Write("Input natural number: N = ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-while (number < 1){
-    Console.Write("It's not a natural number. PLease try again: N = ");
-    number = Convert.ToInt32(Console.ReadLine());
-}
-
-for(int i = 1; i <= number; i++) 
-{
-    Console.Write(Math.Pow(i, 3) + " ");
-}*/
