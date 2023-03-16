@@ -225,8 +225,6 @@ while(current <= number){
 
 //                                    SEMINAR_4
 
-// Cylce FOR
-
 //Task_24
 //Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел от 1 до А.
 
@@ -245,6 +243,9 @@ Console.WriteLine("Введите положительное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"Сумма от 1 до {number} = {Sum(number)}");*/
+
+
+//**************************************************************************************************************************
 
 
 //Task_26
@@ -266,7 +267,11 @@ int number = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Количество символов = {NumDel(number)}");*/
 
 
-//Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+//**************************************************************************************************************************
+
+
+//Task_28
+//Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
 
 /*int Mult(int A)
 {
@@ -279,13 +284,16 @@ Console.WriteLine($"Количество символов = {NumDel(number)}");*
 }
 System.Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Произведение от 1 до {number} = {Mult(number)}");
-*/
+Console.WriteLine($"Произведение от 1 до {number} = {Mult(number)}");*/
 
 
-//Задача 30: Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
+//**************************************************************************************************************************
 
-void FillArray(int[] collection)
+
+//Task_30
+//Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
+
+/*void FillArray(int[] collection)
 {
       int length = collection.Length;
       int index = 0;
@@ -309,4 +317,443 @@ void PrintArray(int[] array)
 int[] array = new int[8]; //Создай новый массив из 8 эл-тов
 
 FillArray(array);  
-PrintArray(array);
+PrintArray(array);*/
+
+
+
+
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
+
+//                                    SEMINAR_5
+
+//Task_31
+//Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9].
+//Найдите сумму отрицательных и положительных элементов массива.
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(-9, 10);
+}
+return arr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+
+int sumPositive = 0;
+int sumNegative = 0;
+
+for(int i = 0; i < array.Length; i++)
+{
+if(array[i] > 0)
+{
+sumPositive+= array[i];
+}
+else
+{
+sumNegative+= array[i];
+}
+}
+
+System.Console.Write("Ваш случайный массив: ");
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+System.Console.WriteLine($"Сумма положительных значений равна {sumPositive}, а сумма отрицательных значений равна {sumNegative}");*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_32 
+//Напишите программу замены элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(-9, 10);
+}
+return arr;
+}
+
+int[] ChangeArray(int[] arr, int size)
+{
+// Чтобы работать с массивом используем копирования массива в отдельный, чтобы не было изменение изначального
+int[] copyArr = new int[size];
+for(int i = 0; i < copyArr.Length; i++)
+{
+copyArr[i] = arr[i];
+}
+
+for(int i = 0; i < copyArr.Length; i++)
+{
+    copyArr[i] *= -1;
+}
+return copyArr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+
+int[] changeArray = ChangeArray(array, size);
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+System.Console.WriteLine($"[{string.Join(", ", changeArray)}]");*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_33
+//Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(-9, 10);
+}
+return arr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+System.Console.WriteLine("Введите число: ");
+int search = Convert.ToInt32(Console.ReadLine());
+
+bool isOk = false;
+for(int i = 0; i < array.Length; i++)
+{
+if(search == array[i])
+{
+isOk = true;
+break;
+}
+}
+if(isOk)
+{
+System.Console.WriteLine("Элемент найден");
+}
+else
+{
+System.Console.WriteLine("Элемент не найден");
+}
+
+// Второй вариант решения
+string result = "No";
+
+for(int i=0; i<array.Length; i++){
+if(array[i] == search){
+result = "yes";
+break;
+}
+}
+System.Console.WriteLine(result);*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_35
+//Задайте одномерный массив из N случайных чисел.
+// Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(0, 150);
+}
+return arr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+int count = 0;
+for(int i = 0; i < array.Length; i++)
+{
+if(array[i] >= 10 && array[i] <= 99)
+{
+count++;
+}
+}
+System.Console.WriteLine(count);*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_37
+//Найдите произведение пар чисел в одномерном массиве.
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(0, 10);
+}
+return arr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+
+int newLength = array.Length / 2 + array.Length % 2;
+int[] newArray = new int[newLength];
+for(int i = 0; i < array.Length / 2; i++)
+{
+newArray[i] = array[i] * array[array.Length - 1 - i];
+}
+if(array.Length % 2 > 0)
+{
+newArray[newArray.Length - 1] = array[array.Length / 2];
+}
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+System.Console.WriteLine($"[{string.Join(", ", newArray)}]");*/
+
+
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
+
+//                                    SEMINAR_6
+
+//Task_39
+//Напишите программу, которая перевернёт одномерный массив
+//(последний элемент будет на первом месте, а первый - на последнем и т.д.)
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(-9, 10);
+}
+return arr;
+}
+
+void ReverseArray(int[] arr)
+{
+int temp = 0;
+
+for(int i = 0; i < arr.Length/2; i++)
+{
+    temp = arr[i];
+    arr[i] = arr[arr.Length - 1 - i];
+    arr[arr.Length - 1 - i] = temp;
+}
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+ReverseArray(array);
+System.Console.WriteLine($"[{string.Join(", ", array)}]");*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_40
+//Напишите программу, которая принимает на вход три числа и проверяет, может ли существовать треугольник со сторонами такой длины.
+//Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
+
+/*System.Console.Write("Введите первую сторону треугольника: ");
+int AB = Convert.ToInt32(Console.ReadLine());
+System.Console.Write("Введите вторую сторону треугольника: ");
+int BC = Convert.ToInt32(Console.ReadLine());
+System.Console.Write("Введите третью сторону треугольника: ");
+int AC = Convert.ToInt32(Console.ReadLine());
+
+if(AB + BC > AC && AB + AC > BC && BC + AC > AB)
+{
+System.Console.Write("Треугольник существует");
+}
+else
+{
+System.Console.Write("Треугольник не существует");
+}*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_42
+//Напишите программу, которая будет преобразовывать десятичное число в двоичное. (45 -> 101101, 2 -> 10)
+
+/*void PrintBinary(int number)
+{
+if(number <= 0)
+{
+return;
+}
+
+PrintBinary(number/2);
+Console.Write(number%2);
+}
+
+System.Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+PrintBinary(number);
+
+
+
+// Второй вариант
+Console.WriteLine("Введите первое число: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+int end = 0;
+while (num1 > 0)
+{
+end = num1 % 2;
+num1 /= 2;
+Console.Write(end);
+}
+
+
+
+//Третий вариант
+int SizeofDif(int num)
+{
+int count = 0;
+
+while (num > 0)
+{
+    num /= 2;
+    count++;
+}
+
+return count;
+}
+
+int[] Dif(int num)
+{
+int[] arr = new int[SizeofDif(num)];
+
+for (int i = 0; i < arr.Length; i++)
+{
+    arr[i] = num % 2;
+    num /= 2;
+}
+
+return arr;
+}
+
+int[] Reverse(int[] someArr)
+{
+
+for (int i = 0; i < someArr.Length/2; i++)
+{
+    int temp = someArr[i];
+    someArr[i] = someArr[someArr.Length - 1 - i];
+    someArr[someArr.Length - 1 - i] = temp;
+}
+
+return someArr;
+}
+
+int[] result = Dif(2);
+Console.WriteLine($"Your array: [{string.Join(", ", result)}]");
+int[] newArr = Reverse(result);
+Console.WriteLine($"Reverse array: [{string.Join(", ", newArr)}]");*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_44 
+//Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+
+/*void PrintFibToN(int N)
+{
+int fib1 = 0;
+int fib2 = 1;
+int fib3 = 0;
+Console.Write("0 1 ");
+for(int i = 0; i < N - 2; i++)
+{
+fib3 = fib1 + fib2;
+Console.Write($"{fib3} ");
+fib1 = fib2;
+fib2 = fib3;
+}
+}
+
+System.Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+PrintFibToN(number);
+
+
+
+//Второй вариант решения
+Console.Write("Input number ");
+int number = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[number];
+array[0] = 0;
+array[1] = 1;
+for(int i = 2; i < number; i++){
+array[i] = array[i-2] + array[i-1];
+}
+Console.Write("Array: ");
+Console.WriteLine($"[{string.Join(", ", array)}]");*/
+
+
+//*****************************************************************************************************************************
+
+
+//Task_45 
+//Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
+
+/*int[] FillArrayWhithRandomNumber(int size)
+{
+int[] arr = new int[size];
+Random rnd = new Random();
+for(int i = 0; i < arr.Length; i++)
+{
+arr[i] = rnd.Next(-9, 10);
+}
+return arr;
+}
+
+int[] CopyArray(int[] arr, int size)
+{
+int[] copyArr = new int[size];
+for(int i = 0; i < copyArr.Length; i++)
+{
+copyArr[i] = arr[i];
+}
+return copyArr;
+}
+
+System.Console.Write("Введите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = FillArrayWhithRandomNumber(size);
+int[] changeArray = CopyArray(array, size);
+
+System.Console.WriteLine($"[{string.Join(", ", array)}]");
+System.Console.WriteLine($"[{string.Join(", ", changeArray)}]");*/

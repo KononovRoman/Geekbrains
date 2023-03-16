@@ -80,3 +80,4 @@ while (size < 1)
 
 int[] array = FillArray(size);
 System.Console.WriteLine($"[{string.Join(", ", array)}]");*/
+

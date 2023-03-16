@@ -14,7 +14,7 @@
 // Дан текст. В тексте нужно все пробелы заменить чёрточками, 
 //маленькие буквы “к” заменить большими “К”,а большие “С” маленькими “с”
 
-string Replace(string text, char oldValue, char newValue)
+/*string Replace(string text, char oldValue, char newValue)
 {
     string result = String.Empty;
     int length = text.Length;
@@ -31,7 +31,7 @@ Console.WriteLine(text);
 Console.WriteLine();
 
 string newText = Replace(text, ' ', '|');
-Console.WriteLine(newText);
+Console.WriteLine(newText);*/
 
 
 
@@ -67,3 +67,25 @@ PrintArray(arr);
 SelectionSort(arr);
 PrintArray(arr);*/
 
+
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
+
+//                                    LECTURE_3
+
+//Рекурсия и двумерные массивы
+
+string[,] table = new string[2,5];
+table[1,2] = "word";
+//индексы в двумерных массивах, как и в одномерных начинаются с 0
+
+for (int rows = 0; rows < 2; rows++)
+{
+    for (int columns = 0; columns < 5; columns++)
+    {
+        Console.WriteLine($"-{table[rows,columns]}-");
+    }
+}
