@@ -759,6 +759,11 @@ System.Console.WriteLine($"[{string.Join(", ", array)}]");
 System.Console.WriteLine($"[{string.Join(", ", changeArray)}]");*/
 
 
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
 //                                    SEMINAR_7
 
 //Task_46
@@ -962,5 +967,369 @@ int[,] matrix = FillMatrixWithRandom(row, column);
 
 PrintMatrix(matrix);
 Console.Write($"Сумма элементов на главной диагонали = {SumMain(matrix)}: ");*/
+
+
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
+
+//                                    SEMINAR_8
+
+//Task_53
+//Задайте двумерный массив и напишите программу, которая поменяет первую и последнюю строки
+
+
+/*int Prompt(string message)
+{
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[,] FillMatrixWithRandom(int row, int col)
+{
+    int[,] array = new int[row, col];
+    Random rnd = new Random();
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = rnd.Next(0, 11);
+        }
+    }
+    return array;
+}
+
+int[,] SwitchRows(int[,] someMatrix)
+{
+    for (int i = 0; i < someMatrix.GetLength(1); i++)
+    {
+
+        int temp = someMatrix[0, i];
+        someMatrix[0, i] = someMatrix[someMatrix.GetLength(0) - 1, i];
+        someMatrix[someMatrix.GetLength(0) - 1, i] = temp;
+    }
+    return someMatrix;
+}
+
+void PrintMatrix(int[,] someMatrix)
+{
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            Console.Write($"{someMatrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int rows = Prompt("Input quantity of rows: ");
+int cols = Prompt("Input quantity of cols: ");
+
+int[,] matrix = FillMatrixWithRandom(rows, cols);
+PrintMatrix(matrix);
+SwitchRows(matrix);
+Console.WriteLine();
+PrintMatrix(matrix);*/
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+/*int Prompt(string message)
+{
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[,] FillMatrixWithRandom(int row, int col)
+{
+    int[,] array = new int[row, col];
+    Random rnd = new Random();
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = rnd.Next(0, 11);
+        }
+    }
+    return array;
+}
+
+int[,] SwitchRowsOnCols(int[,] someMatrix)
+{
+    int[,] newArray = new int[someMatrix.GetLength(1), someMatrix.GetLength(0)];
+
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            newArray[j, i] = someMatrix[i, j];
+        }
+    }
+    return newArray;
+}
+
+void PrintMatrix(int[,] someMatrix)
+{
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            Console.Write($"{someMatrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int rows = Prompt("Input quantity of rows: ");
+int cols = Prompt("Input quantity of cols: ");
+
+int[,] matrix = FillMatrixWithRandom(rows, cols);
+PrintMatrix(matrix);
+Console.WriteLine();
+PrintMatrix(SwitchRowsOnCols(matrix));*/
+
+
+/*int Prompt(string message)
+{
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[,] FillMatrixWithRandom(int row, int col)
+{
+    int[,] array = new int[row, col];
+    Random rnd = new Random();
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = rnd.Next(0, 11);
+        }
+    }
+    return array;
+}
+
+void CountElements(int[,] someMatrix)
+{
+    for ( int k = 0; k < 10; k++)
+    {
+        int count = 0;
+        for (int i = 0; i < someMatrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < someMatrix.GetLength(1); j++)
+            {
+                if (k == someMatrix[i,j])
+                    count ++;
+            }
+        }
+    if (count > 0)
+        Console.WriteLine($"{k} встречается в массиве {count} раз");
+
+    }
+}
+
+void PrintMatrix(int[,] someMatrix)
+{
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            Console.Write($"{someMatrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int rows = Prompt("Input quantity of rows: ");
+int cols = Prompt("Input quantity of cols: ");
+
+int[,] matrix = FillMatrixWithRandom(rows, cols);
+PrintMatrix(matrix);
+CountElements(matrix);*/
+
+
+//*****************************************************************************************************************************
+//*****************************************************************************************************************************
+
+
+
+
+//                                    SEMINAR_9
+
+// Задача 63: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+// N = 5 -> "1, 2, 3, 4, 5"
+// N = 6 -> "1, 2, 3, 4, 5, 6"
+
+/*void PrintNumberToN(int N)
+{
+    if(N == 0)
+    {
+        return;
+    }
+    PrintNumberToN(N - 1);
+    System.Console.Write($"{N} ");
+}
+
+System.Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+PrintNumberToN(number);*/
+
+
+//Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+//M = 1; N = 5 -> "1, 2, 3, 4, 5"
+//M = 4; N = 8 -> "4, 6, 7, 8"
+
+/*void PrintNumberFromMToN(int M, int N)
+{
+    if(N == M - 1)
+    {
+        return;
+    }
+    PrintNumberFromMToN(M, N - 1);
+    System.Console.Write($"{N} ");
+}
+
+System.Console.Write("Введите число, начиная с которого будем выводить: ");
+int numberFrom = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("Введите число, до которого будем выводить: ");
+int numberTo = Convert.ToInt32(Console.ReadLine());
+
+if (numberFrom > numberTo) Console.WriteLine("Ошибка введения чисел!");
+else PrintNumberFromMToN(numberFrom, numberTo);*/
+
+
+
+//Задача 67: Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
+//453 -> 12
+//45 -> 9
+
+/*int SumRec(int number)
+{
+    if (number == 0)
+    {
+        return 0;
+    }    
+    return number % 10 + SumRec(number / 10);
+}  
+
+System.Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine(SumRec(number));*/
+
+
+//Задача 69: Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
+//A = 3; B = 5 -> 243 (3⁵)
+//A = 2; B = 3 -> 8
+
+/*int PowAB(int a, int b)
+{
+    if (b == 0)
+    {
+        return 1;
+    }    
+    return a * PowAB(a, b - 1);
+} 
+
+
+System.Console.Write("Введите основание степени: ");
+int A = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("Введите показатель степени: ");
+int B = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine(PowAB(A, B));*/
+
+
+/*int Prompt(string message)
+{
+    Console.Write(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[,] FillMatrixWithRandom(int row, int col)
+{
+    int[,] array = new int[row, col];
+    Random rnd = new Random();
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = (rnd.Next(1, 10));
+        }
+    }
+    return array;
+}
+
+void PrintMatrix(int[,] someMatrix)
+{
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            Console.Write($"{someMatrix[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int ShowLargerstSumOfStr(int[,] someMatrix)
+{
+    int[] array = new int[someMatrix.GetLength(0)];
+    int sumElInStr = 0;
+    int index = 0;
+
+    for (int i = 0; i < someMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < someMatrix.GetLength(1); j++)
+        {
+            sumElInStr += someMatrix[i, j];
+        }
+
+        array[i] = sumElInStr;
+
+        //if (i == 0) result = array[0];
+        //else if (array[i] < result) result = array[i];
+
+        sumElInStr = 0;
+    }
+
+    for (int k = 0; k < array.Length; k++)
+    {
+        if (array[k] == array.Min()) 
+        {   
+            index = k;
+            break;
+        }
+
+    }
+    return index;
+}
+
+int rows = Prompt("Input quantity of rows: ");
+int cols = Prompt("Input quantity of cols: ");
+
+int[,] matrix = FillMatrixWithRandom(rows, cols);
+PrintMatrix(matrix);
+Console.WriteLine();
+int result = ShowLargerstSumOfStr(matrix);
+
+Console.Write($"Index min string: {result}");*/
+
+
+
 
 
