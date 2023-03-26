@@ -60,7 +60,7 @@ Console.WriteLine($"Сумма чисел от {M} до {N} включитель
 //Task_68
 //Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
-/*int Prompt(string message)
+int Prompt(string message)
 {
     Console.Write(message);
     int result = Convert.ToInt32(Console.ReadLine());
@@ -78,4 +78,4 @@ int AccermanFunction (int m, int n)
 int m = Prompt("Input first natural number: ");
 int n = Prompt("Input second natural number: ");
 
-Console.WriteLine(AccermanFunction(m, n));*/
+Console.WriteLine(AccermanFunction(m, n));
